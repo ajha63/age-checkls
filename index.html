@@ -19,18 +19,18 @@ and open the template in the editor.
                    minAge = $(this).val();
                 });
               if (localStorage.getItem('ageVerified')) {
-                window.location.replace("http://github.com/ajha63/age-checkls");
+                window.location.replace("https://github.com/ajha63/age-checkls");
               } else {
                 $.ageCheck({
                   minAge: 18,
-                  redirectTo: 'http://github.com/ajha63/age-checkls',
+                  redirectTo: 'https://github.com/ajha63/age-checkls',
                   redirectOnFail: 'http://www.google.com',
                   title: 'Age Verification',
                   copy: 'This Website requires you to be [18] years or older to enter. Please enter your Date of Birth in the fields below in order to continue:'
                 });
               }
               $('button').on('click', function(){
-                  window.location.replace("http://http://github.com/ajha63/age-checkls");
+                  window.location.replace("https://github.com/ajha63/age-checkls");
               });
             });
         </script>
