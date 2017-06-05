@@ -1,0 +1,137 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Age CheckLS (localStorage)</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/png" href="favicon.ico">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <link href="css/agecheckls.css" rel="stylesheet" />
+        <script src="js/jquery.agecheckls.js"></script>
+        <script>
+            $(document).ready(function(){
+              var minAge = $('select').val();
+                $('select').on('change', function(){
+                   minAge = $(this).val();
+                });
+              if (localStorage.getItem('ageVerified')) {
+                window.location.replace("http://github.com/ajha63/age-checkls");
+              } else {
+                $.ageCheck({
+                  minAge: 18,
+                  redirectTo: 'http://github.com/ajha63/age-checkls',
+                  redirectOnFail: 'http://www.google.com',
+                  title: 'Age Verification',
+                  copy: 'This Website requires you to be [18] years or older to enter. Please enter your Date of Birth in the fields below in order to continue:'
+                });
+              }
+              $('button').on('click', function(){
+                  window.location.replace("http://http://github.com/ajha63/age-checkls");
+              });
+            });
+        </script>
+        <style>
+            .demo h3 {
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight:bold;
+                font-size:30px;
+                text-align:center;
+                border-bottom:1px dashed #ccc;
+                padding:0 0 20px 0;
+                line-height:38px;
+            }
+            .demo p {
+
+                font-family: Arial, Helvetica, sans-serif;
+                font-size:14px;
+                line-height:26px;
+                text-align:center;
+                margin-bottom:10px;
+                color:#649D09;
+            }
+            .demo button {
+                box-sizing: border-box;
+                display: inline-block;
+                margin-bottom: 10px;
+                margin-top:5px;
+                font-weight: bold;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                -ms-touch-action: manipulation;
+                touch-action: manipulation;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                background-image: none;
+                border: 1px solid transparent;
+                border-radius: 4px;
+                padding: 4px 20px 6px 20px;
+                font-size: 24px;
+                line-height: 1.5;
+                background:#8EB908;
+                color:#fff;
+                text-shadow:1px 1px 0 #84A51D;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .demo button:hover{
+                box-sizing: border-box;
+                background:#82A711;
+            }
+            @media (max-width: 500px) {
+                .demo p {
+                    font-size:12px;
+                    line-height: 17px;
+                }
+                .demo h3 {
+                    font-size:18px;
+                    line-height:22px;
+                }
+                .demo button {
+                    font-size:17px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="demo">
+        <h3>
+          <a style="text-decoration:none; color:#666;" href="http://agecheckls.ajha.work/">AgeCheckls.js <span style="color:red;">Demo</span><br>jQuery Plugin for Checking user age</a></h3>
+        </h3>
+            <div style="max-width:500px; padding:0; margin:0 auto;">
+
+              <p>
+                    AgeCheckls.js will automatically prompt to check your age. It will redirect back to this page on success. You can change the minimum age by selecting from the select options, and
+                    re-trigger by clicking the big button below.
+                </p>
+                <p>
+                    Oh, the plugin is also responsive - so resize the viewport. Aitte?
+                </p>
+                <p>
+                    Minimum age:
+                    <select name="age">
+                        <option value="21">21</option>
+                        <option value="20">20</option>
+                        <option value="19">19</option>
+                        <option value="18">18</option>
+                    </select>
+                </p>
+                <p>
+                    <button>Check My Age:</button>
+                </p>
+                <p>
+                  Based on Michael Soriano age-check plugins Click  <strong><a style="color:red" href="https://github.com/fearlessflyer/age-check">Here</a></strong> to go to the GitHub Repo.<br>
+                  Click <strong><a style="color:red" href="http://michaelsoriano.com/jquery-plugin-check-user-age/">Here</a></strong> to go to the Documentation.
+                </p>
+
+            </div>
+        </div>
+    </body>
+</html>

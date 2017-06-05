@@ -1,0 +1,12 @@
+{
+  "name": "age-checkls",
+  "version": "0.0.1",
+  "description": "jQuery plugin to verify if user is old enough to enter site (localStorage)",
+  "main": "jquery.agecheckls.js",
+  "repository": "https://github.com/ajha63/age-checkls",
+  "author": "Alvaro Hernandez",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
