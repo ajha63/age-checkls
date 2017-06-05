@@ -1,7 +1,3 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,26 +9,17 @@ and open the template in the editor.
         <link href="css/agecheckls.css" rel="stylesheet" />
         <script src="js/jquery.agecheckls.js"></script>
         <script>
-            $(document).ready(function(){
-              var minAge = $('select').val();
-                $('select').on('change', function(){
-                   minAge = $(this).val();
-                });
-              if (localStorage.getItem('ageVerified')) {
-                window.location.replace("https://github.com/ajha63/age-checkls");
-              } else {
-                $.ageCheck({
-                  minAge: 18,
-                  redirectTo: 'https://github.com/ajha63/age-checkls',
-                  redirectOnFail: 'http://www.google.com',
-                  title: 'Age Verification',
-                  copy: 'This Website requires you to be [18] years or older to enter. Please enter your Date of Birth in the fields below in order to continue:'
-                });
-              }
-              $('button').on('click', function(){
-                  window.location.replace("https://github.com/ajha63/age-checkls");
-              });
+        $(document).ready(function(){
+            var minAge = $('select').val();
+            $('select').on('change', function(){
+               minAge = $(this).val();
             });
+            $('button').on('click', function(){
+                sessionStorage.clear();
+                $.ageCheck({minAge: minAge});
+            });
+            $.ageCheck({minAge: minAge});
+        });
         </script>
         <style>
             .demo h3 {
@@ -126,8 +113,15 @@ and open the template in the editor.
                 <p>
                     <button>Check My Age:</button>
                 </p>
+                <!-- Alvaro Hernandez repo -->
                 <p>
-                  Based on Michael Soriano age-check plugins Click  <strong><a style="color:red" href="https://github.com/fearlessflyer/age-check">Here</a></strong> to go to the GitHub Repo.<br>
+                  AgeCheckLS plugins Click  <strong><a style="color:red" href="https://github.com/fearlessflyer/age-check">Here</a></strong> to go to the Alvaro's GitHub Repo.<br>
+                  Click <strong><a style="color:red" href="http://agecheckls.ajha.work/document.html/">Here</a></strong> to go to the Documentation.
+                </p>
+
+                <!-- Michael Soriano repo and docs -->
+                <p>
+                  Based on Michael Soriano age-check plugins Click  <strong><a style="color:red" href="https://github.com/fearlessflyer/age-check">Here</a></strong> to go to the Michael's GitHub Repo.<br>
                   Click <strong><a style="color:red" href="http://michaelsoriano.com/jquery-plugin-check-user-age/">Here</a></strong> to go to the Documentation.
                 </p>
 
